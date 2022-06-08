@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/src/screeens/home/home.dart';
+import 'package:mobile/src/screens/home/home.dart';
+import 'package:mobile/src/screens/login/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        
-        primarySwatch: Colors.blue,
-      ),
-      home: Home(),
-    );
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.dark,
+          primarySwatch: Colors.blue,
+        ),
+        home: LoginPage(),
+        routes: <String, WidgetBuilder>{
+          '/recuperar-senha': (BuildContext context) => Home()
+        });
   }
 }
