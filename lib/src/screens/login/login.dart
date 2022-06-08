@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:http/http.dart' as http;
 
 import '../../components/textFormFields/textFields.dart';
+import '../../models/user.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -17,6 +21,19 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController textController2 = TextEditingController();
   bool passwordVisibility = false;
 
+  Login() {
+    if (textController1.text == 'brenoallencs@gmail.com' && textController2.text == 'teste1234'){
+      Navigator.pushNamed(context, '/home');
+      return;
+    } else {
+      const snackBar = SnackBar(content: Text('email ou senha invalido!'));
+
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      return;
+    }
+  }
+
+
   void initState() {
     super.initState();
     textController1 = TextEditingController();
@@ -28,11 +45,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: const Text('Slio'),
-        titleTextStyle: const TextStyle(
-          fontSize: 30,
-        ),
-        backgroundColor: const Color.fromARGB(0, 106, 209, 156),
+        title: const Text('Slio'),
+        backgroundColor: const Color(0xFF6AD19B),
       ),
       body: SafeArea(
           child: Container(
@@ -104,8 +118,8 @@ class _LoginPageState extends State<LoginPage> {
                 width: 370,
                 height: 40,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/home');
+                  onPressed: () => {
+                    Login()
                   },
                   child: const Text('Entrar'),
                   style: ElevatedButton.styleFrom(
