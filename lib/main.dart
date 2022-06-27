@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/src/components/404/InicioVazio.dart';
 import 'package:mobile/src/screens/home/home.dart';
 import 'package:mobile/src/screens/login/login.dart';
 import 'package:mobile/src/screens/recuperar-senha/confirmar-codigo.dart';

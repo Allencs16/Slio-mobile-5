@@ -20,33 +20,33 @@ class _CampoTextoState extends State<CampoTexto> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(28, 60, 28, 28),
+      padding: const EdgeInsetsDirectional.fromSTEB(28, 60, 28, 28),
       child: TextFormField(
         controller: widget.controller,
         onChanged: (_) => EasyDebounce.debounce(
           widget.controller.toString(),
-          Duration(milliseconds: 2000),
+          const Duration(milliseconds: 2000),
           () => setState(() {}),
         ),
         autofocus: true,
         decoration: InputDecoration(
           hintText: widget.hintText,
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: Color(0xFF6AD19B),
               width: 1,
             ),
             borderRadius: BorderRadius.circular(10),
           ),
           focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: Color(0xFF6AD19B),
               width: 1,
             ),
             borderRadius: BorderRadius.circular(10),
           ),
           filled: true,
-          fillColor: Color(0x0004eea0),
+          fillColor: const Color(0x0004eea0),
         ),
       ),
     );

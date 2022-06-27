@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/src/components/404/InicioVazio.dart';
+import 'package:mobile/src/components/cads/cardHome.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -13,7 +15,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: Container(
         margin: const EdgeInsets.only(top: 20),
-        alignment: AlignmentDirectional.topCenter,
+        alignment: AlignmentDirectional.center,
         child: ListView(
           children: [
             const Padding(
@@ -31,13 +33,42 @@ class _HomeState extends State<Home> {
             Image.asset(
               'lib/src/assets/images/homeDecorate.png',
               fit: BoxFit.fill,
-            )
+            ),
+            Container(
+                margin: const EdgeInsets.only(top: 30, bottom: 30),
+                child: const Text(
+                  'Itens próximos da validade:',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                )),
+            const InicioVazio()
+
+            // CardHome(
+            //   nomeProduto: 'Picanha',
+            //   validadeProduto: '7',
+            // ),
+            // CardHome(
+            //   nomeProduto: 'Maminha',
+            //   validadeProduto: '10',
+            // ),
+            // CardHome(
+            //   nomeProduto: 'Alcatra',
+            //   validadeProduto: '89',
+            // ),
+            // CardHome(
+            //   nomeProduto: 'Patinho',
+            //   validadeProduto: '2',
+            // ),
+            // CardHome(
+            //   nomeProduto: 'Cupim',
+            //   validadeProduto: '4',
+            // ),
           ],
         ),
       ),
       bottomNavigationBar: BottomAppBar(
         notchMargin: 3,
-        color: Color.fromARGB(136, 0, 0, 0),
+        color: const Color.fromARGB(136, 0, 0, 0),
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           GestureDetector(
             child: Image.asset('lib/src/assets/images/icon-toHome.png'),
